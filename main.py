@@ -144,9 +144,9 @@ def main():
     app.add_handler(CallbackQueryHandler(admin_settings_callback, pattern="^adm_settings$"))
     app.add_handler(CallbackQueryHandler(admin_close_ticket_callback, pattern="^admin_close_\\d+$"))
     app.add_handler(CallbackQueryHandler, pattern="^user_reply_\\d+$") # Handle user quick reply callback
+
+    app.add_handler(CallbackQueryHandler(user_reply_new_message, pattern="^user_reply_\\d+$"))
     
-
-
     logger.info("ربات با موفقیت شروع به کار کرد...")
     app.run_polling()
 
