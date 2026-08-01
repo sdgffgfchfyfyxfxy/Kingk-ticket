@@ -34,7 +34,7 @@ def user_tickets_keyboard(tickets):
     keyboard = []
     for t in tickets:
         status_icon = "🟢" if t["status"] == "Open" else "🔴"
-        text = f"{status_icon} #{t['ticket_id']} - {t['title']} ({t['status'])"
+       text = f"{status_icon} #{t['ticket_id']} - {t['title']} ({t['status']})"
         keyboard.append([InlineKeyboardButton(text, callback_data=f"view_ticket_{t['ticket_id']}")])
     keyboard.append([InlineKeyboardButton("🔙 بازگشت به منوی اصلی", callback_data="back_to_main")])
     return InlineKeyboardMarkup(keyboard)
