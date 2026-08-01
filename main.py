@@ -145,9 +145,7 @@ def main():
     app.add_handler(CallbackQueryHandler(admin_close_ticket_callback, pattern="^admin_close_\\d+$"))
     app.add_handler(CallbackQueryHandler, pattern="^user_reply_\\d+$") # Handle user quick reply callback
     
-    # Handlers خاص دیگر
-    app.add_handler(CallbackQueryHandler(from handlers.user_handlers import user_reply_new_message, pattern="^user_reply_\\d+$"))
-    app.add_handler(MessageHandler((filters.TEXT | filters.PHOTO | filters.VIDEO | filters.VOICE | filters.DOCUMENT) & ~filters.COMMAND, user_active_ticket_message_handler))
+
 
     logger.info("ربات با موفقیت شروع به کار کرد...")
     app.run_polling()
