@@ -3,6 +3,7 @@ from telegram.ext import (
     ApplicationBuilder, CommandHandler, CallbackQueryHandler,
     MessageHandler, ConversationHandler, filters
 )
+from handlers.user_handlers import user_reply_new_message
 from config import TOKEN, ADMIN_ID
 from database.db import init_db, add_ticket_message, get_ticket_by_id
 from states.states import TicketStates, AdminStates
